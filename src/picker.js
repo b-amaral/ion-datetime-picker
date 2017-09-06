@@ -338,7 +338,7 @@ angular.module("ion-datetime-picker", ["ionic"])
 
         $scope.commit = function() {
           $scope.modelDate = new Date($scope.year, $scope.month, $scope.day, $scope.hour, $scope.minute, $scope.second);
-          ngModelCtrl.$setViewValue($scope.modelDate);
+          ngModelCtrl.$setViewValue(moment([$scope.year, $scope.month, $scope.day, $scope.hour, $scope.minute, $scope.second]).format('YYYY-MM-DD[T]HH:mm:ss'));
         };
 
         $element.on("click", $scope.showPopup);
